@@ -3,35 +3,48 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import styles from "../styles/layout.module.css";
+import {
+    NavigationMenu,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList, navigationMenuTriggerStyle
+} from "@/components/ui/navigation-menu";
+import React from "react";
 
 export const Nav = () => {
-  const pathname = usePathname();
+    const pathname = usePathname();
 
-  return (
-    <nav className={styles.nav}>
-      <Link
-        className={`${styles.link} ${pathname === "/" ? styles.active : ""}`}
-        href="/"
-      >
-        Home
-      </Link>
-      <Link
-        className={`${styles.link} ${
-          pathname === "/verify" ? styles.active : ""
-        }`}
-        href="/verify"
-      >
-        Verify
-      </Link>
-      <Link
-        className={`${styles.link} ${
-          pathname === "/quotes" ? styles.active : ""
-        }`}
-        href="/quotes"
-      >
-        Quotes
-      </Link>
-    </nav>
-  );
+    return (
+        <div className={"flex justify-between m-6"}>
+            <NavigationMenu>
+                <NavigationMenuList>
+                    <NavigationMenuItem>
+                        <Link href="" legacyBehavior passHref>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                Home
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <Link href="" legacyBehavior passHref>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                Movie
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                </NavigationMenuList>
+            </NavigationMenu>
+            <NavigationMenu>
+                <NavigationMenuList>
+                    <NavigationMenuItem>
+                        <Link href="" legacyBehavior passHref>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                Login
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                </NavigationMenuList>
+            </NavigationMenu>
+        </div>
+    );
 };
