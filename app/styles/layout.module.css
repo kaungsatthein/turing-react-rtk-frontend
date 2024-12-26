@@ -23,14 +23,6 @@
   grid-area: main;
 }
 
-.header,
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .footer {
   grid-area: footer;
   justify-self: center;
