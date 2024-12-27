@@ -15,9 +15,11 @@ import {useRouter} from "next/navigation";
 
 const MovieUi = ({movie} : {movie: Movie}) => {
     const router = useRouter();
+
     const handleDetail = () => {
         router.push(`/movies/${movie._id}`)
     }
+
     return (
 
             <Card className={styles.movieCard}>
