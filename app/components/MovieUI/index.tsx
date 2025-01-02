@@ -2,7 +2,6 @@ import React from 'react'
 import Movie from "@/app/types/movie";
 import {
     Card,
-    CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
@@ -36,10 +35,6 @@ const MovieUi = ({movie} : {movie: Movie}) => {
                     </div>
                     <Button onClick={handleDetail}>Details</Button>
                 </CardHeader>
-                <CardContent>
-                    <p>{movie.director.name}</p>
-                    <p>{movie.director.phoneNo}</p>
-                </CardContent>
             </Card>
     )
 }

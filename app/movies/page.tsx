@@ -43,7 +43,7 @@ const Movies = () => {
     return (
         <>
             <Button className={"mb-10"}>Create</Button>
-            <div className={"flex flex-row gap-2"}>
+            <div className={"flex flex-row gap-4"}>
                 {
                     movies && movies.map(movie => (
                         <MovieUI key={movie._id} movie={movie}/>
