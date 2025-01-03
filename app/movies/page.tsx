@@ -4,7 +4,12 @@ import React from 'react'
 import Movie from "@/app/types/movie";
 import MovieUI from "@/app/components/MovieUI/index";
 import { Button } from "@/components/ui/button"
+import {
+    Dialog,
+    DialogTrigger,
+} from "@/components/ui/dialog"
 
+import CreateMovieDialog from "@/app/components/CreateMovieDialog";
 
 const movies: Movie[] = [
     {
@@ -42,7 +47,12 @@ const movies: Movie[] = [
 const Movies = () => {
     return (
         <>
-            <Button className={"mb-10"}>Create</Button>
+            <Dialog>
+                <DialogTrigger asChild>
+                    <Button className={"mb-10"}>Create</Button>
+                </DialogTrigger>
+               <CreateMovieDialog/>
+            </Dialog>
             <div className={"flex flex-row gap-4"}>
                 {
                     movies && movies.map(movie => (
